@@ -13,9 +13,6 @@ web = Blueprint ('web', __name__)
 
 from app.web import user
 from app.web import product
-from app.web import web_mutiple
-from app.web import web_single
-from app.web import inventory
 from app.web import category
 from app.web import storage
 from app.web import record

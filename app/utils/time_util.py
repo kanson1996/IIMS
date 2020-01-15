@@ -5,7 +5,7 @@
 """
 
 import time
-import datetime
+from datetime import datetime
 
 
 # 判断间隔时间

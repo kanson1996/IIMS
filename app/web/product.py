@@ -13,7 +13,7 @@ from app.models.base import db
 from app.models.category import Category
 from app.models.product import Product
 from app.models.storage_product import StorageProduct
-from test.uuid import tid_maker
+from app.utils.uuid import tid_maker
 from . import web
 
 
@@ -215,7 +215,7 @@ def product_multiple_tags():
     result_list = list ()  # []
 
     condition = (1 == 1)
-    if storage_id is not None:
+    if storage_id != 0 and storage_id is not None:
         condition = and_ (condition, StorageProduct.storage_id == storage_id)
     if category_id != 0 and category_id is not None:
         condition = and_ (condition, Product.category_id == category_id)

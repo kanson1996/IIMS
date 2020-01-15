@@ -5,9 +5,9 @@
 """
 
 from flask import Flask
-from app.models.user import db
 from flask_login import LoginManager
 
+from app.models.base import db
 
 login_manager = LoginManager ()
 
@@ -20,7 +20,6 @@ def register_blueprint(app):
 def create_app():
     app = Flask (__name__)  # 操作Flask核心对象
     app.config.from_object ('app.secure')
-    app.config.from_object ('app.setting')
     db.init_app (app)
     login_manager.init_app (app)
     register_blueprint (app)

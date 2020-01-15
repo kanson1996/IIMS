@@ -12,7 +12,7 @@ from app.models.record import Record
 from app.models.record_product import RecordProduct
 from app.models.storage_product import StorageProduct
 from app.web import web
-from test.uuid import tid_maker
+from app.utils.uuid import tid_maker
 
 
 @web.route ('/record/add', methods=['GET', 'POST'])
