@@ -5,35 +5,12 @@
 """
 
 import time
-from datetime import datetime
-
-
-# 判断间隔时间
-def time_judge(start_time, end_time):
-    total_seconds = (end_time - start_time).total_seconds ()
-    # 来获取准确的时间差，并将时间差转换为秒
-    mins = total_seconds / 60
-    return int (mins)
-
-
-# UTC时间转本地时间（+8:00）
-def utc2local(utc_st):
-    now_stamp = time.time ()
-    local_time = datetime.fromtimestamp (now_stamp)
-    utc_time = datetime.utcfromtimestamp (now_stamp)
-    offset = local_time - utc_time
-    local_st = utc_st + offset
-    return local_st
-
-
-# 本地时间转UTC时间（-8:00）
-def local2utc(local_st):
-    time_struct = time.mktime (local_st.timetuple ())
-    utc_st = datetime.utcfromtimestamp (time_struct)
-    return utc_st
 
 
 # 生成当前时间的时间戳，只有一个参数即时间戳的位数，默认为10位，输入位数即生成相应位数的时间戳，比如可以生成常用的13位时间戳
+import datetime
+
+
 def now_to_timestamp(digits=10):
     time_stamp = time.time ()
     digits = 10 ** (digits - 10)

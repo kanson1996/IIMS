@@ -62,31 +62,3 @@ class Product (Base):
     def to_json_str(all_vendors):
         v = [ven.dobule_to_dict () for ven in all_vendors]
         return v
-
-
-class ResultOfProduct:
-    product_id = 0
-    product_amount = 0
-    category_id = 0
-    storage_id = 0
-    manufacturing_date = datetime.now ()
-    product_name = ''
-    sale_price = 0
-
-    @property
-    def serialize(self):
-        return to_json (self, self.__class__)
-
-    def dobule_to_dict(self):
-        result = {}
-        for key in self.__mapper__.c.keys ():
-            if getattr (self, key) is not None:
-                result[key] = str (getattr (self, key))
-            else:
-                result[key] = getattr (self, key)
-        return result
-
-    # 配合todict一起使用
-    def to_json_str(all_vendors):
-        v = [ven.dobule_to_dict () for ven in all_vendors]
-        return v

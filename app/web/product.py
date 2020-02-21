@@ -337,7 +337,7 @@ def editorData():
         # 保存接收的图片到指定根目录
         upload_file.save (file_paths)
     # 这个是图片的访问路径，需返回前端（可有可无）
-    url = 'http://192.168.0.108:8000/images/'  # API地址（开启一个8000端口的静态资源服务器）
+    url = 'http://192.168.1.2:8000/images/'  # API地址（开启一个8000端口的静态资源服务器）
     image_url = url + file_name
     # 返回图片路径 到前端
     return jsonify ({'code': 0, 'url': image_url, 'imgname': file_name})

@@ -11,7 +11,7 @@ from flask_login import login_user
 
 from app.models.base import db
 from app.models.user import User
-from app.utils.time_util import utc2local, time_judge
+from app.utils.datetime_util import utc2local, time_judge
 from . import web
 
 
