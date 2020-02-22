@@ -11,7 +11,7 @@
 * 后端开发环境：基于Python 3.6.2，Flask 1.1.1（推荐使用virtualenv指定虚拟环境开发，方便类库和版本管理），虚拟环境创建完后使用以下命令导入类库依赖
 
   ```linux
-  pip install -r requirement.txt
+  pip install -r requirements.txt
   ```
 
 * 后端IDE：PyCharm
@@ -36,3 +36,8 @@
 
   用户上传商品图片后保存到指定根目录images下 根目录配置参见IIMS 的app/web/product.py文件editorData方法
 
+## 常用命令
+```linux
+   pip freeze > requirements.txt # 导出配置文件名及对应版本号信息
+   virtualenv -p D:\Python\Python36\python.exe Venv_1 # 创建名为Venv_1的虚拟编译环境
+```
